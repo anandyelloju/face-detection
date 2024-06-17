@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Face Detection</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 	<style type="text/css">
+ 		#upload {
+		    opacity: 0;
+		}
+
+		#upload-label {
+		    position: absolute;
+		    top: 50%;
+		    left: 1rem;
+		    transform: translateY(-50%);
+		}
+
+		.image-area {
+		    border: 2px dashed rgba(255, 255, 255, 0.7);
+		    padding: 1rem;
+		    position: relative;
+		}
+
+		.image-area::before {
+		    content: 'Uploaded image result';
+		    color: #fff;
+		    font-weight: bold;
+		    text-transform: uppercase;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    font-size: 0.8rem;
+		    z-index: 1;
+		}
+
+		.image-area img {
+		    z-index: 2;
+		    position: relative;
+		}
+
+
+		body {
+		    min-height: 100vh;
+		    background-color: #757f9a;
+		    background-image: linear-gradient(147deg, #757f9a 0%, #d7dde8 100%);
+		}
+ 	</style>
+ 	<script type="text/javascript">
+ 		function readURL(input) {
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+
+		        reader.onload = function (e) {
+		            $('#imageResult')
+		                .attr('src', e.target.result);
+		        };
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$(function () {
+		    $('#upload').on('change', function () {
+		        readURL(input);
+		    });
+		});
+
+		var input = document.getElementById( 'upload' );
+		var infoArea = document.getElementById( 'upload-label' );
+
+		input.addEventListener( 'change', showFileName );
+		function showFileName( event ) {
+		  var input = event.srcElement;
+		  var fileName = input.files[0].name;
+		  infoArea.textContent = 'File name: ' + fileName;
+		}
+ 	</script>
+</head>
+<body>
+	<header class="site-header fixed-top bg-dark border-bottom 	border-dark">
+	    <div class="container">
+		    <nav class="navbar main-nav navbar-expand-lg navbar-dark">
+				<!-- Brand/logo -->
+				<a class="navbar-brand d-inline-flex text-uppercase" href="home"> Face Detection </a> 
+				
+				<!-- Toggler/collapsibe Button -->
+		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-exponded="flase" aria-lable="Toggle navigation">
+		            <span class="navbar-toggler-icon"></span>
+		        </button>  
+
+				<!-- Navbar links -->
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav ml-auto">
+					  	<li class="nav-item"> <a class="nav-link text-white" href="project_details"> Project Details </a></li>
+					  	<li class="nav-item"> <a class="nav-link text-white" href="project"> Project </a></li>
+					    <li class="nav-item"> <a class="nav-link text-white" href="about_us"> About Us </a></li>
+					</ul> 
+			    </div>
+			</nav>
+		</div>
+	</header>
+
+	<form action="/uploadforFD" method="post" enctype="multipart/form-data">
+		<div class="container py-5">
+		    <!-- For demo purpose -->
+		    <div class="text-white text-center py-4">
+		        <h1 class="display-4">Image upload</h1>
+		        <p class="lead mb-0"> Only upload .jpg and .jpeg images for Face Detection. </p>
+		    </div>
+		    <div class="row py-4">
+		        <div class="col-lg-6 mx-auto">
+
+		            <!-- Upload image input-->
+		            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+		                <input id="upload" name="uploadFDimg" type="file" name="img_upload" onchange="readURL(this);" class="form-control border-0">
+		                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+		                <div class="input-group-append">
+		                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> 
+		                    	<i class="fa fa-cloud-upload mr-2 text-muted"></i>
+		                    	<small class="text-uppercase font-weight-bold text-muted">Choose file</small>
+		                    </label>
+		                </div>
+		            </div>
+
+		            <!-- Uploaded image area-->
+		            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+		            <div class="image-area mt-4">
+		            	<img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
+		            </div><br>
+		            
+		            <div class="text-center">
+ 						<label class= "btn btn-light m-0 rounded-pill px-4">
+ 							<input type="submit" class="btn form-control text-uppercase font-weight-bold text-muted text" name="" value="Upload"> 
+ 						</label>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>
+</body>
+</html>

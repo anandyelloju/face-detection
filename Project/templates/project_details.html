@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Face Detection</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header class="site-header fixed-top bg-dark border-bottom 	border-dark">
+	    <div class="container">
+		    <nav class="navbar main-nav navbar-expand-lg navbar-dark">
+				<!-- Brand/logo -->
+				<a class="navbar-brand d-inline-flex text-uppercase" href="home"> Face Detection </a> 
+				
+				<!-- Toggler/collapsibe Button -->
+		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-exponded="flase" aria-lable="Toggle navigation">
+		            <span class="navbar-toggler-icon"></span>
+		        </button>  
+
+				<!-- Navbar links -->
+				<div class="collapse navbar-collapse " id="navbarContent">
+					<ul class="navbar-nav ml-auto">
+					  	<li class="nav-item"> <a class="nav-link text-white" href="project_details"> Project Details </a></li>
+					  	<li class="nav-item"> <a class="nav-link text-white" href="project"> Project </a></li>
+					    <li class="nav-item"> <a class="nav-link text-white" href="about_us"> About Us </a></li>
+					</ul> 
+			    </div>
+			</nav>
+		</div>
+	</header>
+
+	<main id="project_details_content">
+		<div class="container-fluid py-5"> 
+			<div class="row py-3">
+	  			<div class="col-sm-3">
+					<ul class="nav nav-pills flex-column" role="tablist">
+					    <li class="nav-item">
+					        <a class="nav-link active" data-toggle="pill" href="#ui">UI Module</a>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link" data-toggle="pill" href="#be">Backend Module</a>
+					    </li>
+					    <li class="nav-item">
+					        <a class="nav-link" data-toggle="pill" href="#ml">ML Module</a>
+					    </li>
+					</ul>
+				</div>
+	 			<div class="col-sm-9">
+					<div class="tab-content">
+					    <div id="ui" class="container tab-pane active">
+					    	<ul class="nav nav-tabs">
+								<li class="nav-item">
+								    <a class="nav-link active" data-toggle="tab" href="#guiintro"> GUI </a>
+								</li>
+								<li class="nav-item">
+								    <a class="nav-link" data-toggle="tab" href="#html"> HTML/CSS</a>
+								</li>
+								<li class="nav-item">
+								    <a class="nav-link" data-toggle="tab" href="#bootstrap"> Bootstrap </a>
+								</li>
+							</ul>
+							<div class="tab-content"><br>
+							    <div class="tab-pane container active" id="guiintro">
+							    	<h3>Graphical User Interface module</h3>
+         					        <p>    It takes an image input and sends it to the Backend for Predict.​ Displays the predicted response from the backend​. We used the following technologies to implement the Front-end module.
+									</p>
+							    </div>
+								<div class="tab-pane container fade" id="html">
+					        		<div class="row">
+										<div class="col-sm-6">
+						    				<h3> HTML/CSS </h3>
+					       					<p> HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the necessary technologies for building sites. HTML gives the structure of the page, CSS the (visual and aural) layout, for a spread of devices. </p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://miro.medium.com/max/2688/1*Q8w9PI58DKjolhl5aDeiOQ.png" width="100%">
+										</div>
+									</div>
+							    </div>
+							    <div class="tab-pane container fade" id="bootstrap">
+							    	<div class="row">
+										<div class="col-sm-6">
+							    			<h3> Bootstrap </h3>
+					        				<p> Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components. </p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaoHXppDbVzsKgqrWzlQWa2KOMUzlU_1gddiGR0EdNRW-b8qecHK0sE0LN8di6CtQIB1o&usqp=CAU" width="100%">
+										</div>
+									</div>
+							    </div>
+							</div>
+					    </div>
+					    <div id="be" class="container tab-pane fade"><br>
+					    	<ul class="nav nav-tabs">
+								<li class="nav-item">
+								    <a class="nav-link active" data-toggle="tab" href="#beintro"> Back-end </a>
+								</li>
+								<li class="nav-item">
+								    <a class="nav-link" data-toggle="tab" href="#fastapi"> FastAPI </a>
+								</li>
+							</ul>
+							<div class="tab-content"><br>
+							    <div class="tab-pane container active" id="beintro">
+							    	<div class="row">
+										<div class="col-sm-6">
+						    				<h3>Back-end module</h3>
+         					        		<p>It takes requests from the GUI and responds accordingly.​ Request the ML module to predict and return the predicted dataThe used the following framework to implement the Back-end module.</p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://cdn4.vectorstock.com/i/thumb-large/78/48/back-end-icon-simple-element-from-website-vector-34877848.jpg" width="100%">
+										</div>
+									</div>
+							    </div>
+								<div class="tab-pane container fade" id="fastapi">
+					        		<div class="row">
+										<div class="col-sm-6">
+						    				<h3> FastAPI </h3>
+					       					<p> FastAPI may be a modern, fast (high-performance), Many factors causeisnternet framework for building APIs with Python 3.6+ supported standard Python type hints.
+											Yes, it is fast, very fast and it is due to out-of-the-box support of the async feature of Python 3.6+ this is why it is recommended to use the latest versions of Python. </p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://repository-images.githubusercontent.com/260928305/92388600-8d1c-11ea-9993-a726466b5099" width="100%">
+										</div>
+									</div>
+							    </div>
+							</div>
+					    </div>
+					    <div id="ml" class="container tab-pane fade"><br>
+					        <ul class="nav nav-tabs">
+								<li class="nav-item">
+								    <a class="nav-link active" data-toggle="tab" href="#mlintro"> Machine Learning </a>
+								</li>
+								<li class="nav-item">
+								    <a class="nav-link" data-toggle="tab" href="#opencv"> OpenCV </a>
+								</li>
+							</ul>
+							<div class="tab-content"><br>
+							    <div class="tab-pane container active" id="mlintro">
+							    	<div class="row">
+										<div class="col-sm-6">
+						    				<h3>Machine Learning module</h3>
+         					        		<p>The main module in Face detection, which takes input as an image, and predicts the output in the runtime.​ We will train and validate the ML module, Saves module as a file for production use.​ We used the following technologies to implement the Front-end module. </p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://www.smartdatacollective.com/wp-content/uploads/2018/11/Machine-learning-scaled.jpg" width="100%">
+										</div>
+									</div>
+							    </div>
+								<div class="tab-pane container fade" id="opencv">
+					        		<div class="row">
+										<div class="col-sm-6">
+						    				<h3> OpenCV </h3>
+					       					<p> Open Source Computer Vision Library is an open-source computer vision​  and machine learning software library. ​which is built to provide a common infrastructure for machine learning algorithms and computer vision. ​It has thousands of optimized algorithms which can be used for different ​purposes like detecting and recognizing faces, identifying objects, and many more. ​We need it to take pictures from the user and some manipulation needed to be done in the image.​</p>
+					        			</div>
+					        			<div class="col-sm-6">
+											<img src="https://developer.nvidia.com/sites/default/files/akamai/cuda/images/product_logos/OpenCV_Logo_340.jpg" width="100%">
+										</div>
+									</div>
+							    </div>
+							</div>
+					    </div>
+				  	</div>
+				</div>
+			</div>
+		</div> 
+	</main>
+	
+</body>
+</html>
